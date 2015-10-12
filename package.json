@@ -1,0 +1,24 @@
+{
+  "name": "elixir-jade",
+  "version": "1.0.0",
+  "description": "Laravel Elixir 3 task to compile Jade",
+  "main": "index.js",
+  "author": {
+    "name": "Larkin Whitaker"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larkinwhitaker/laravel-elixir-jade.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8"
+  },
+  "dependencies": {
+    "laravel-elixir": "^3.0.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "underscore": "^1.8.3"
+  }
+}
