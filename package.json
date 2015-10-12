@@ -10,11 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/larkinwhitaker/laravel-elixir-jade.git"
   },
-  "devDependencies": {
-    "gulp": "^3.8.8"
-  },
   "dependencies": {
     "laravel-elixir": "^3.0.0",
+    "gulp": "^3.8.8",
     "gulp-jade": "^1.1.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
