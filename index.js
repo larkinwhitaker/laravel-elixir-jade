@@ -23,29 +23,30 @@ var Task = elixir.Task;
 elixir.extend('jade', function (options) 
 {
 	options = _.extend({
-	        baseDir: './resources',
-	        dest: '/views/',
-	        pretty: false,
-	        search: '**/*.jade',
-	        src: '/jade/',
-	        extension: '.html'
-	    }, options);
+        baseDir: './resources',
+        dest: '/views/',
+        pretty: false,
+        search: '**/*.jade',
+        src: '/jade/',
+        extension: '.html'
+    }, options);
 
-	    var gulpSrc = options.baseDir + options.src + options.search,
-	    	jadeOptions = _.pick(
-	        options,
-	        'filename',
-	        'doctype',
-	        'pretty',
-	        'self',
-	        'debug',
-	        'compileDebug',
-	        'compiler'
-	    );
+    var gulpSrc = options.baseDir + options.src + options.search;
+
+    var jadeOptions = _.pick(
+        options,
+        'filename',
+        'doctype',
+        'pretty',
+        'self',
+        'debug',
+        'compileDebug',
+        'compiler'
+    );
 
 	new Task('jade', function() 
 	{
-        return gulp.src([gulpSrc])
+        return gulp.src(gulpSrc)
             .pipe(plumber())
             .pipe(jade(jadeOptions))
             .pipe(rename(function (path) {
@@ -55,9 +56,8 @@ elixir.extend('jade', function (options)
             .pipe(notify({
                 title: 'Laravel Elixir',
                 message: 'Jade templates compiled',
-                icon: __dirname + '/../laravel-elixir/icons/pass.png',
-                onLast: true
+                icon: __dirname + '/../laravel-elixir/icons/pass.png'
             }));
     })
-	.watch(options.src + '**');
+    .watch([ options.baseDir + options.src + options.search ]);
 });
